@@ -1,5 +1,11 @@
-module "s3-bucket" {
-  source  = "terraform-aws-modules/s3-bucket/aws"
-  version = "2.2.0"
-  bucket-prefix = jason-keating
+module "s3_bucket" {
+  source = "terraform-aws-modules/s3-bucket/aws"
+
+  bucket = "jason-keating-test"
+  acl    = "private"
+
+  versioning = {
+    enabled = true
+  }
+
 }
